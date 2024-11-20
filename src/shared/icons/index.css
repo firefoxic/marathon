@@ -9,3 +9,9 @@
 	inherits: false;
 	initial-value: url("./cross.svg");
 }
+
+@property --Icon_shape_phone {
+	syntax: "<url>";
+	inherits: false;
+	initial-value: url("./phone.svg");
+}
