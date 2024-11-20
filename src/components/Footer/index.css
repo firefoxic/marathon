@@ -1,5 +1,5 @@
 .Footer {
-	background: var(--ColorUI-BG_special);
+	background: oklch(from var(--ColorUI-Brand) l c h / 0.05);
 
 	@media (--not-small) {
 		box-sizing: border-box;
@@ -7,7 +7,16 @@
 }
 
 .Footer-Container {
-	display: block flex;
-	justify-content: space-between;
-	align-items: center;
+	display: block grid;
+	justify-items: center;
+	gap: 32px;
+	padding-block: 32px;
+}
+
+.Footer-Navigation {
+	--NavigationList-ColumnGap: 80px;
+}
+
+.Footer-Copyright {
+	margin-block: 32px 8px;
 }

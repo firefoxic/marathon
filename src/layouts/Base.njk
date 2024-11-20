@@ -30,7 +30,7 @@
 		{% call Header("Page-Header") %}
 		<div class="Page-Centerer Header-Container">
 			{{ Logo("Header-Logo") }}
-			{{ Navigation("Header-Navigation") }}
+			{{ Navigation("Header-Navigation", topNavLinks) }}
 		</div>
 		{% endcall %}
 
@@ -41,6 +41,7 @@
 		{% call Footer("Page-Footer") %}
 		<div class="Page-Centerer Footer-Container">
 			{{ Logo("Footer-Logo") }}
+			{{ Navigation("Footer-Navigation", mainNavLinks) }}
 			{{ Copyright("Footer-Copyright") }}
 		</div>
 		{% endcall %}

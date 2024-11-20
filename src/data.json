@@ -1,12 +1,42 @@
 {
-	"navLinks": [
+	"mainNavLinks": [
+		{
+			"text": "О нас",
+			"rootUrl": "/about"
+		},
+		{
+			"text": "Галерея",
+			"rootUrl": "/gallery"
+		},
+		{
+			"text": "Новости",
+			"rootUrl": "/news"
+		},
+		{
+			"text": "Контакты",
+			"rootUrl": "/contacts"
+		}
+	],
+	"topNavLinks": [
 		{
 			"text": "Главная",
 			"rootUrl": "/"
 		},
 		{
-			"text": "404",
-			"rootUrl": "/lost"
+			"text": "О нас",
+			"rootUrl": "/about"
+		},
+		{
+			"text": "Контакты",
+			"rootUrl": "/contacts"
+		},
+		{
+			"text": "Поиск",
+			"rootUrl": "/search"
+		},
+		{
+			"text": "+7 (987) 887–87–87",
+			"rootUrl": "tel:+79878878787"
 		}
 	]
 }

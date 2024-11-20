@@ -19,6 +19,8 @@
 
 	--ColorUI-Accent: var(--ColorPalette-Mauve_light);
 
+	--ShadowUI: 4px 8px 40px 0 oklch(from var(--ColorPalette-Mauve_darker) l c h / 0.2);
+
 	background: var(--ColorUI-BG);
 	color: var(--ColorUI-Text);
 	accent-color: var(--ColorUI-Accent);

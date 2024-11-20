@@ -1,6 +1,5 @@
 .Navigation {
 	position: relative;
-	z-index: 1;
 }
 
 .Navigation-Title {
@@ -9,32 +8,30 @@
 }
 
 .Navigation-Button {
-	&:not([hidden]) {
-		@media (--only-small) {
-			display: block flex;
-			align-items: center;
-			gap: 0.5em;
-			padding: 0.5em;
-			border: solid;
-			background: var(--ColorUI-BG_special);
-			border-radius: 0.5em;
-			box-shadow: 0 0.1em 1em 0 oklch(from var(--ColorUI-Text) l c h / var(--shadow-alpha, 0));
-			transition: box-shadow var(--motion-duration, 0.1s);
-
-			&:hover {
-				@media (hover: hover) {
-					--shadow-alpha: 0.5;
-				}
-			}
-
-			&:active {
-				--shadow-alpha: 0;
-			}
-		}
-	}
+	display: block flex;
+	align-items: center;
+	padding: 0.5em;
+	border: none;
+	border-radius: 0.5em;
+	color: var(--ColorUI-Text);
+	background: var(--ColorUI-BG_is-secondary);
 
 	@media (--not-small) {
 		display: none;
+	}
+
+	&[hidden] {
+		display: none;
+	}
+
+	&:hover {
+		@media (hover: hover) {
+			color: var(--ColorUI-Accent);
+		}
+	}
+
+	&:active {
+		opacity: 0.7;
 	}
 
 	&[aria-expanded="false"] {
@@ -64,39 +61,79 @@
 	padding: 0;
 	display: block flex;
 	flex-wrap: wrap;
-	gap: 0.5em;
+	justify-content: center;
+	column-gap: calc(var(--NavigationList-ColumnGap, 40px) - 1em);
+	row-gap: 1em;
+}
 
+.Navigation-List_is-collapsible {
 	@media (--only-small) {
-		flex-direction: column;
-		border: solid;
-		background: var(--ColorUI-BG_special);
-		padding: 1em;
 		margin: 0.5em;
-		border-radius: 0.5em;
+		flex-direction: column;
+		inline-size: max-content;
+		padding: 40px 30px;
+		border-radius: 20px;
+		background: var(--ColorUI-BG_is-secondary);
+		box-shadow: var(--ShadowUI);
+	}
 
-		:not([hidden]) ~ & {
+	:not([hidden]) ~ & {
+		@media (--only-small) {
 			position: absolute;
 			inset-inline-end: -0.5em;
+			z-index: 2;
 		}
+	}
 
-		[aria-expanded="false"] ~ & {
+	[aria-expanded="false"] ~ & {
+		@media (--only-small) {
 			display: none;
 		}
 	}
 }
 
 .Navigation-Item {
+	margin-block: -0.25em;
+
 	&::marker {
 		color: transparent;
 	}
 }
 
 .Navigation-Link {
-	font-family: var(--FontAccent-Family);
+	display: block flex;
+	gap: 0.5em;
+	align-items: center;
+	padding: 0.25em 0.5em;
+	border-radius: 0.5em;
+	font-family: var(--FontMain-Family);
+	font-size: 1rem;
+	color: var(--ColorUI-Text);
 	text-decoration: none;
 
 	&[aria-current="page"] {
 		text-decoration: underline;
-		text-underline-offset: 0.3em;
+		text-underline-offset: 0.2em;
+		color: var(--ColorUI-Brand);
+	}
+
+	&[href^="tel:"] {
+		--Link_has-icon: "";
+		--Icon: var(--Icon_shape_phone);
+
+		color: var(--ColorUI-Brand);
+	}
+
+	&:hover {
+		color: var(--ColorUI-Accent);
+	}
+
+	&::before {
+		content: var(--Link_has-icon, none);
+		display: block flow-root;
+		block-size: 16px;
+		aspect-ratio: 1;
+		background: currentcolor;
+		mask: var(--Icon) no-repeat center / cover;
 	}
 }
