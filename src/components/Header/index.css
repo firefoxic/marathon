@@ -1,4 +1,5 @@
 .Header {
+	padding-block: 3px;
 	background: var(--ColorUI-BG_special);
 
 	@media (--not-small) {
@@ -10,4 +11,20 @@
 	display: block flex;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.Header-Logo {
+	@media (--only-small) {
+		--Logo-Size: 44px;
+	}
+
+	@media (--not-small) {
+		margin-inline-start: -8px;
+	}
+}
+
+.Header-Navigation {
+	@media (--not-small) {
+		margin-inline-end: -8px;
+	}
 }

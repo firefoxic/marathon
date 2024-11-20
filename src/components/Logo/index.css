@@ -1,11 +1,17 @@
+.Logo {
+	--Logo-BorderRadius: 0.5em;
+}
+
 .Logo-Link {
-	margin-block: 0.5em;
 	display: block flow-root;
 	font-family: var(--FontAccent-Family);
+	border-radius: var(--Logo-BorderRadius);
+	outline-offset: 0px;
 }
 
 .Logo-Image {
 	display: block flow-root;
-	block-size: 2lh;
+	block-size: var(--Logo-Size, 64px);
 	inline-size: auto;
+	border-radius: var(--Logo-BorderRadius);
 }
