@@ -1,0 +1,16 @@
+{% macro fonts() %}
+	<link
+		rel="preload"
+		href="{{ project.root }}/shared/fonts/futura-pt-cyrillic-400-normal.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin="anonymous"
+	>
+	<link
+		rel="preload"
+		href="{{ project.root }}/shared/fonts/futura-pt-cyrillic-500-normal.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin="anonymous"
+	>
+{% endmacro %}

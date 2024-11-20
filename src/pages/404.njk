@@ -1,0 +1,14 @@
+{% extends "./layouts/Base.njk" %}
+
+{% set page = {
+	title: "404",
+	description: "Страница не найдена",
+	link: project.root ~ "/404.html"
+} %}
+
+{% block Content %}
+	<div class="Page-Centerer">
+		<h1 class="Heading Heading_size_large">{{ page.title }}: {{ page.description }}</h1>
+		<p>Начните заново с <a href="{{ project.root }}/">главной страницы</a>.</p>
+	</div>
+{% endblock Content %}

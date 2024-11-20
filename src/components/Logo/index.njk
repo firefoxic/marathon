@@ -1,0 +1,7 @@
+{% macro Logo(classes) %}
+	<div class="{{ classes }} Logo">
+		<a class="Logo-Link" href="{{ project.root }}/">
+			<img class="Logo-Image" src="{{ project.root }}/shared/images/logo.svg" width="64" height="64" alt="Логотип">
+		</a>
+	</div>
+{% endmacro %}

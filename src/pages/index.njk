@@ -1,0 +1,12 @@
+{% extends "./layouts/Base.njk" %}
+
+{% set page = {
+	title: "Главная страница",
+	link: project.root ~ "/"
+} %}
+
+{% block Content %}
+
+	<h1 class="Page-Centerer">{{ page.title }}</h1>
+
+{% endblock Content %}

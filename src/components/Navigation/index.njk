@@ -1,0 +1,26 @@
+{%- macro Navigation(classes) -%}
+	<nav class="{{ classes }} Navigation">
+		<h2 class="Navigation-Title">Main navigation</h2>
+		<button
+			class="Navigation-Button Button"
+			type="button"
+			aria-controls="Navigation-List"
+			hidden
+		>
+			<span class="Navigation-ButtonText">Toggle navigation list</span>
+		</button>
+
+		<ul class="Navigation-List " id="Navigation-List">
+			{% for link in navLinks %}
+				{%- set linkUrl = project.root ~ link.rootUrl -%}
+				<li class="Navigation-Item">
+					<a
+						class="Navigation-Link"
+						href="{{ linkUrl }}"
+						{{ "aria-current=page" if linkUrl === page.link -}}
+					>{{ link.text }}</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</nav>
+{%- endmacro -%}

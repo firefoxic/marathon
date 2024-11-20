@@ -1,0 +1,12 @@
+{
+	"navLinks": [
+		{
+			"text": "Главная",
+			"rootUrl": "/"
+		},
+		{
+			"text": "404",
+			"rootUrl": "/lost"
+		}
+	]
+}
