@@ -1,6 +1,6 @@
 .Header {
 	padding-block: 3px;
-	background: var(--ColorUI-BG_special);
+	background: var(--ColorUI-BG_is-secondary);
 
 	@media (--not-small) {
 		box-sizing: border-box;
