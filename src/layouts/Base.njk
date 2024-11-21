@@ -42,7 +42,9 @@
 		<div class="Page-Centerer Footer-Container">
 			{{ Logo("Footer-Logo") }}
 			{{ Navigation("Footer-Navigation", mainNavLinks) }}
-			{{ Copyright("Footer-Copyright") }}
+			{% call Copyright("Footer-Copyright") %}
+				{{ copyright }}
+			{% endcall %}
 		</div>
 		{% endcall %}
 

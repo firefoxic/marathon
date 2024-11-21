@@ -1,8 +1,5 @@
 {% macro Copyright(classes) %}
 	<div class="{{ classes }} Copyright">
-		Developed by
-		<a class="Copyright-Link" href="https://github.com/firefoxic">
-			<span class="Copyright-Name">firefoxic</span>
-		</a>
+		{{ caller() }}
 	</div>
 {% endmacro %}
