@@ -1,0 +1,33 @@
+.ErrorInfo {
+	--Icon-Size_range_min: 182px;
+	--Icon-Size_range_max: 280px;
+	--Icon-Size_max: 326px;
+	--Icon-Size:
+		min(
+			var(--Icon-Size_max),
+			var(--Icon-Size_range_min)
+			+
+			(100vi - var(--Breakpoint_range_min))
+			*
+			tan(atan2((var(--Icon-Size_range_max) - var(--Icon-Size_range_min)), 1px))
+			/
+			tan(atan2((var(--Breakpoint_range_max) - var(--Breakpoint_range_min)), 1px))
+		);
+	display: block grid;
+	gap: 40px;
+	place-items: center;
+	padding-block: 40px;
+	text-align: center;
+
+	&::before {
+		content: "";
+		display: block flow-root;
+		inline-size: var(--Icon-Size);
+		aspect-ratio: 1 / 1;
+		background: var(--Icon_shape_confusion) no-repeat center / contain;
+	}
+
+	:is(h1, p) {
+		margin: 0;
+	}
+}

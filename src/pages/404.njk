@@ -1,5 +1,7 @@
 {% extends "./layouts/Base.njk" %}
 
+{%- from "./components/Link/index.njk" import Link with context -%}
+
 {% set page = {
 	title: "404",
 	description: "Страница не найдена",
@@ -7,8 +9,13 @@
 } %}
 
 {% block Content %}
-	<div class="Page-Centerer">
-		<h1 class="Heading Heading_size_large">{{ page.title }}: {{ page.description }}</h1>
-		<p>Начните заново с <a href="{{ project.root }}/">главной страницы</a>.</p>
+	<div class="Page-Centerer ErrorInfo">
+		<h1>Что-то пошло не так…</h1>
+		{{ Link("Navigation-Link", {
+			text: "Вернуться назад",
+			rootUrl: "/",
+			iconShape: "arrow-left",
+			isButton: true
+		}) }}
 	</div>
 {% endblock Content %}
