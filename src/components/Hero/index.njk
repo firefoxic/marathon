@@ -1,0 +1,11 @@
+
+{%- from "../Picture/index.njk" import Picture with context -%}
+
+{%- macro Hero(classes) -%}
+	<section class="{{ classes }} Hero">
+		{{ Picture("hero", {"class": "Hero-Image"}) }}
+		<div class="Hero-Text Page-Centerer">
+			{{ caller() }}
+		</div>
+	</section>
+{%- endmacro -%}

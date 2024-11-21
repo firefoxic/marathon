@@ -1,0 +1,31 @@
+.Hero {
+	display: block grid;
+	grid-template-areas: "hero";
+}
+
+.Hero-Text {
+	grid-area: hero;
+	padding-block: 2em;
+	-webkit-text-stroke: 20px var(--ColorUI-BG_is-secondary);
+}
+
+.Hero-Image {
+	--Image-Size_range_min: 150px;
+	--Image-Size_range_max: 250px;
+	--Image-Size_max: 300px;
+	--Image-Size:
+		min(
+			var(--Image-Size_max),
+			var(--Image-Size_range_min)
+			+
+			(100vi - var(--Breakpoint_range_min))
+			*
+			tan(atan2((var(--Image-Size_range_max) - var(--Image-Size_range_min)), 1px))
+			/
+			tan(atan2((var(--Breakpoint_range_max) - var(--Breakpoint_range_min)), 1px))
+		);
+	grid-area: hero;
+	object-fit: cover;
+	inline-size: 100%;
+	block-size: var(--Image-Size);
+}
