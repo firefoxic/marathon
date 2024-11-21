@@ -1,0 +1,58 @@
+.Link {
+	display: block flex;
+	gap: 0.5em;
+	align-items: center;
+	justify-content: var(--Text-Align, center);
+	padding: 0.25em 0.5em;
+	border-radius: 0.5em;
+	font-family: var(--FontMain-Family);
+	font-size: 1rem;
+	color: var(--Text-Color, var(--ColorUI-Text));
+	text-decoration: none;
+
+	&[aria-current="page"] {
+		text-decoration: underline;
+		text-underline-offset: 0.2em;
+		color: var(--ColorUI-Brand);
+	}
+
+	&:where(.Link_has-icon) {
+		--Link_has-icon: "";
+		--Text-Color: var(--ColorUI-Brand);
+	}
+
+	&:where(.Link_is-button) {
+		--Text-Color: var(--Button-Color, var(--ColorUI-Brand));
+		padding: 0.5em 1em;
+		background:
+			color-mix(
+				in srgb,
+				var(--Text-Color) var(--Button-BG_alpha, var(--BG_alpha, 5%)),
+				transparent
+			);
+		color: var(--Text-Color);
+	}
+
+	&:where(.Link_is-text-leading) {
+		--Icon-Order: 2;
+	}
+
+	&:hover {
+		--BG_alpha: 15%;
+		--Text-Color: var(--Button-Color, var(--ColorUI-Accent));
+	}
+
+	&:active {
+		--BG_alpha: 20%;
+	}
+
+	&::before {
+		content: var(--Link_has-icon, none);
+		order: var(--Icon-Order);
+		display: block flow-root;
+		block-size: 1em;
+		aspect-ratio: 1;
+		background: currentcolor;
+		mask: var(--Icon) no-repeat center / cover;
+	}
+}

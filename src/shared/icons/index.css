@@ -1,3 +1,15 @@
+@property --Icon_shape_arrow-left {
+	syntax: "<url>";
+	inherits: false;
+	initial-value: url("./arrow-left.svg");
+}
+
+@property --Icon_shape_arrow-right {
+	syntax: "<url>";
+	inherits: false;
+	initial-value: url("./arrow-right.svg");
+}
+
 @property --Icon_shape_burger {
 	syntax: "<url>";
 	inherits: false;

@@ -1,3 +1,5 @@
+{%- from "../Link/index.njk" import Link with context -%}
+
 {%- macro Navigation(classes, links) -%}
 	{% set isCollapsible = links === topNavLinks %}
 	{% set title = "Главная навигация" if links === mainNavLinks else "Верхняя навигация" %}
@@ -17,13 +19,8 @@
 
 		<ul class="Navigation-List {{ "Navigation-List_is-collapsible" if isCollapsible }}" id="Navigation-List">
 			{% for link in links %}
-				{%- set linkUrl = project.root ~ link.rootUrl -%}
 				<li class="Navigation-Item">
-					<a
-						class="Navigation-Link"
-						href="{{ linkUrl }}"
-						{{ "aria-current=page" if linkUrl === page.link -}}
-					>{{ link.text }}</a>
+					{{ Link("Navigation-Link", link) }}
 				</li>
 			{% endfor %}
 		</ul>

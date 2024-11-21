@@ -93,47 +93,10 @@
 }
 
 .Navigation-Item {
+	--Text-Align: end;
 	margin-block: -0.25em;
 
 	&::marker {
 		color: transparent;
-	}
-}
-
-.Navigation-Link {
-	display: block flex;
-	gap: 0.5em;
-	align-items: center;
-	padding: 0.25em 0.5em;
-	border-radius: 0.5em;
-	font-family: var(--FontMain-Family);
-	font-size: 1rem;
-	color: var(--ColorUI-Text);
-	text-decoration: none;
-
-	&[aria-current="page"] {
-		text-decoration: underline;
-		text-underline-offset: 0.2em;
-		color: var(--ColorUI-Brand);
-	}
-
-	&[href^="tel:"] {
-		--Link_has-icon: "";
-		--Icon: var(--Icon_shape_phone);
-
-		color: var(--ColorUI-Brand);
-	}
-
-	&:hover {
-		color: var(--ColorUI-Accent);
-	}
-
-	&::before {
-		content: var(--Link_has-icon, none);
-		display: block flow-root;
-		block-size: 16px;
-		aspect-ratio: 1;
-		background: currentcolor;
-		mask: var(--Icon) no-repeat center / cover;
 	}
 }

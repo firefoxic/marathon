@@ -37,7 +37,8 @@
 		},
 		{
 			"text": "+7 (987) 887–87–87",
-			"rootUrl": "tel:+79878878787"
+			"rootUrl": "tel:+79878878787",
+			"iconShape": "phone"
 		}
 	]
 }

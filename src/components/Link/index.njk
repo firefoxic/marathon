@@ -1,0 +1,16 @@
+{%- macro Link(classes, link, icon) -%}
+	{%- set linkUrl = project.root ~ link.rootUrl if link.rootUrl[0] === "/" else link.rootUrl -%}
+	{% set style = "--Icon: var(--Icon_shape_" ~ link.iconShape ~ ");" if link.iconShape %}
+	<a
+		class="
+			{{- classes }}
+			Link
+			{{ "Link_has-icon" if link.iconShape }}
+			{{ "Link_is-text-leading" if link.isTextLeading }}
+			{{ "Link_is-button" if link.isButton -}}
+		"
+		href="{{ linkUrl }}"
+		style="{{ style }}"
+		{{ "aria-current=page" if linkUrl === page.link -}}
+	>{{ link.text }}</a>
+{%- endmacro -%}
