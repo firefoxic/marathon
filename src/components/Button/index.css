@@ -1,0 +1,26 @@
+.Button {
+	display: block flex;
+	gap: 0.5em;
+	align-items: center;
+	justify-content: center;
+	padding: 0.75em 1.5em;
+	border: none;
+	border-radius: 20px;
+	font-family: var(--FontMain-Family);
+	font-size: 1rem;
+	color: var(--ColorUI-Text_is-inverted);
+	background: var(--ColorUI-Brand);
+
+	&:hover {
+		background: var(--ColorUI-Accent);
+	}
+
+	&::after {
+		content: "";
+		display: block flow-root;
+		block-size: 1em;
+		aspect-ratio: 1;
+		background: currentcolor;
+		mask: var(--Icon) no-repeat center / cover;
+	}
+}

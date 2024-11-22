@@ -1,0 +1,10 @@
+{%- macro Button(classes, button) -%}
+	{% set style = "--Icon: var(--Icon_shape_" ~ button.iconShape ~ ");" if button.iconShape %}
+	<button
+		class="{{- classes }} Button"
+		style="{{ style }}"
+		type="{{ button.type or "button" }}"
+	>
+		{{ caller() }}
+	</button>
+{%- endmacro -%}
