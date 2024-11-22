@@ -1,0 +1,55 @@
+.PopularPostPreview {
+	--BorderRadius: 0.25em;
+	position: relative;
+	isolation: isolate;
+	display: block grid;
+	grid-template-rows: 1fr;
+	gap: 20px;
+	padding: 0;
+	border-radius: var(--BorderRadius);
+}
+
+.PopularPostPreview-Title {
+	margin-block: 0;
+	font-family: var(--FontAccent-Family);
+	font-weight: 400;
+	font-size: 18px;
+
+	a {
+		text-decoration: none;
+		color: var(--ColorUI-Text_is-in-post, var(--ColorUI-Text_is-secondary));
+
+		&:focus-visible {
+			--Outline: 2px solid var(--ColorUI-Accent);
+			outline: none;
+		}
+
+		&:hover {
+			--Shadow: var(--ShadowUI);
+		}
+
+		&:active {
+			--Shadow: var(--ShadowUI), var(--ShadowUI);
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			border-radius: var(--BorderRadius);
+			outline: var(--Outline);
+			outline-offset: 2px;
+			box-shadow: var(--Shadow);
+		}
+	}
+}
+
+.PopularPostPreview-Date {
+	margin: 0;
+	font-size: 16px;
+	color: color-mix(in srgb, var(--ColorUI-Text_is-secondary) 40%, transparent);
+
+	@container (width >= 580px) {
+		order: -1;
+	}
+}

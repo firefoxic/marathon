@@ -1,0 +1,14 @@
+{%- from "../PopularPostPreview/index.njk" import PopularPostPreview with context -%}
+
+{% macro PopularPostList(classes) %}
+	<section class="{{ classes }} PopularPostList">
+		<h2 class="PopularPostList-Title">Популярные новости</h2>
+		<ul class="PopularPostList-Container">
+			{% for post in popularPosts %}
+			<li class="PopularPostList-Item">
+				{{ PopularPostPreview("", post) }}
+			</li>
+			{% endfor %}
+		</ul>
+	</section>
+{% endmacro %}

@@ -3,6 +3,7 @@
 {% from "./components/Hero/index.njk" import Hero with context %}
 {% from "./components/PostList/index.njk" import PostList with context %}
 {% from "./components/Sidebar/index.njk" import Sidebar with context %}
+{% from "./components/PopularPostList/index.njk" import PopularPostList with context %}
 
 {% set page = {
 	title: "Главная страница",
@@ -19,6 +20,7 @@
 	{% call PostList("Page-PostList") %}{% endcall %}
 
 	{% call Sidebar("Page-Sidebar") %}
+		{{ PopularPostList("Page-PopularPostList") }}
 	{% endcall %}
 	</div>
 

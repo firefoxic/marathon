@@ -1,0 +1,28 @@
+.PopularPostList {
+	display: block grid;
+	grid-template-columns: subgrid;
+	grid-column: 1 / -1;
+	gap: var(--Layout-Gap);
+}
+
+.PopularPostList-Container {
+	display: block grid;
+	grid-template-columns: subgrid;
+	grid-column: 1 / -1;
+	gap: var(--Layout-Gap);
+	margin: 0;
+	padding: 0;
+}
+
+.PopularPostList-Title {
+	grid-column: 1 / -1;
+	margin-block: 0 10px;
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.PopularPostList-Item {
+	&::marker {
+		color: transparent;
+	}
+}

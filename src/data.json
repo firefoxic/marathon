@@ -134,5 +134,25 @@
 			"name": "Очень длинная категория 2",
 			"url": "javascript:undefined"
 		}
-	}
+	},
+	"popularPosts": [
+		{
+			"id": "1",
+			"title": "ITAM&SAMDay — самая настоящая удача!",
+			"url": "javascript:void(0)",
+			"published": "13 дек 2020"
+		},
+		{
+			"id": "2",
+			"title": "Секреты лицензирования. Всё, что вы хотели знать про Microsoft, SAP и …",
+			"url": "javascript:void(0)",
+			"published": "10 дек 2020"
+		},
+		{
+			"id": "3",
+			"title": "Менеджмент XXI века. Надо ли готовиться к изменениям или мы давно …",
+			"url": "javascript:void(0)",
+			"published": "5 дек 2020"
+		}
+	]
 }
