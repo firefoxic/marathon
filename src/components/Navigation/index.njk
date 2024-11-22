@@ -20,7 +20,9 @@
 		<ul class="Navigation-List {{ "Navigation-List_is-collapsible" if isCollapsible }}" id="Navigation-List">
 			{% for link in links %}
 				<li class="Navigation-Item">
-					{{ Link("Navigation-Link", link) }}
+					{% call Link("Navigation-Link", link) %}
+						{{ link.text }}
+					{% endcall %}
 				</li>
 			{% endfor %}
 		</ul>

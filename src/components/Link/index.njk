@@ -14,5 +14,5 @@
 			{{ "aria-current=page" if linkUrl === page.link -}}
 		{% endif %}
 		style="{{ style }}"
-	>{{ link.text }}</a>
+	>{{ caller() }}</a>
 {%- endmacro -%}

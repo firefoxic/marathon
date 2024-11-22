@@ -7,11 +7,12 @@
 			<h3 class="PostPreview-Title">
 				<a href="{{ post.url }}">{{ post.title }}</a>
 			</h3>
-			{{ Link("PostPreview-Category", {
-				text: categories[post.category].name,
+			{% call Link("PostPreview-Category", {
 				rootUrl: categories[post.category].url,
 				isButton: true
-			}) }}
+			}) %}
+				{{ categories[post.category].name }}
+			{% endcall %}
 			<div class="PostPreview-Description">{{ post.description }}</div>
 			<time class="PostPreview-Date" datetime="{{ post.published }}">{{ post.published }}</time>
 		</div>
