@@ -17,7 +17,10 @@
 		</button>
 		{% endif %}
 
-		<ul class="Navigation-List {{ "Navigation-List_is-collapsible" if isCollapsible }}" id="Navigation-List">
+		<ul
+			class="Navigation-List {{ "Navigation-List_is-collapsible" if isCollapsible }}"
+			{% if isCollapsible %}id="Navigation-List"{% endif %}
+		>
 			{% for link in links %}
 				<li class="Navigation-Item">
 					{% call Link("Navigation-Link", link) %}

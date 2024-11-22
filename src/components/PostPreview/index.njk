@@ -14,7 +14,7 @@
 				{{ categories[post.category].name }}
 			{% endcall %}
 			<div class="PostPreview-Description">{{ post.description }}</div>
-			<time class="PostPreview-Date" datetime="{{ post.published }}">{{ post.published }}</time>
+			<div class="PostPreview-Date">{{ post.published }}</div>
 		</div>
 		{% if post.image %}
 			{{ Picture(post.image, { class: "PostPreview-Image", loading: "lazy" }) }}
