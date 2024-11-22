@@ -1,0 +1,22 @@
+{% from "../Link/index.njk" import Link with context %}
+{% from "../Picture/index.njk" import Picture with context %}
+
+{%- macro PostPreview(classes, post) -%}
+	<article class="PostPreview">
+		<div class="PostPreview-Text">
+			<h3 class="PostPreview-Title">
+				<a href="{{ post.url }}">{{ post.title }}</a>
+			</h3>
+			{{ Link("PostPreview-Category", {
+				text: categories[post.category].name,
+				rootUrl: categories[post.category].url,
+				isButton: true
+			}) }}
+			<div class="PostPreview-Description">{{ post.description }}</div>
+			<time class="PostPreview-Date" datetime="{{ post.published }}">{{ post.published }}</time>
+		</div>
+		{% if post.image %}
+			{{ Picture(post.image, { class: "PostPreview-Image", loading: "lazy" }) }}
+		{% endif %}
+	</article>
+{%- endmacro -%}

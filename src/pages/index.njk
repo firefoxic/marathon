@@ -1,6 +1,7 @@
 {% extends "./layouts/Base.njk" %}
 
 {% from "./components/Hero/index.njk" import Hero with context %}
+{% from "./components/PostList/index.njk" import PostList with context %}
 
 {% set page = {
 	title: "Главная страница",
@@ -12,5 +13,10 @@
 	<h1 class="Page-Centerer">{{ page.title }}</h1>
 
 	{% call Hero("Page-Hero") %}{% endcall %}
+
+	<div class="Page-Centerer Page-Layout">
+	{% call PostList("Page-PostList") %}{% endcall %}
+	</div>
+
 
 {% endblock Content %}

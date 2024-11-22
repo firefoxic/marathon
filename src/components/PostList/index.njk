@@ -1,0 +1,14 @@
+{%- from "../PostPreview/index.njk" import PostPreview with context -%}
+
+{% macro PostList(classes) %}
+	<section class="{{ classes }} PostList">
+		<h2 class="PostList-Title">Карточки</h2>
+		<ul class="PostList-Container">
+			{% for post in posts %}
+			<li class="PostList-Item">
+				{{ PostPreview("", post) }}
+			</li>
+			{% endfor %}
+		</ul>
+	</section>
+{% endmacro %}

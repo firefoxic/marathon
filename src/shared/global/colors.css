@@ -14,6 +14,7 @@
 	--ColorUI-Brand: var(--ColorPalette-Mauve_base);
 	--ColorUI-BG: var(--ColorPalette-Gray_l_09821);
 	--ColorUI-Text: var(--ColorPalette-Black);
+	--ColorUI-Text-is-inverted: var(--ColorPalette-White);
 	--ColorUI-BG_is-secondary: var(--ColorPalette-White);
 	--ColorUI-Text_is-secondary: var(--ColorPalette-Red-dark);
 

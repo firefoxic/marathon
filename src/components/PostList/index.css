@@ -1,0 +1,52 @@
+.PostList {
+	--PostList-Column_count: min(3, var(--Layout-Column_count));
+	display: block grid;
+	grid-template-columns: subgrid;
+	grid-column: 1 / span var(--PostList-Column_count);
+	gap: var(--Layout-Gap);
+}
+
+.PostList-Container {
+	display: block grid;
+	grid-template-columns: subgrid;
+	grid-column: 1 / -1;
+	gap: var(--Layout-Gap);
+	margin: 0;
+	padding: 40px 0;
+}
+
+.PostList-Title {
+	position: absolute;
+	scale: 0;
+}
+
+.PostList-Item {
+	grid-column: span min(2, var(--PostList-Column_count));
+	display: block grid;
+	container-type: inline-size;
+
+	&::marker {
+		color: transparent;
+	}
+
+	&:first-child {
+		grid-column: span var(--PostList-Column_count);
+		min-block-size: 280px;
+	}
+
+	&:nth-child(5n-2),
+	&:nth-child(5n-1) {
+		--ColorUI-BG_is-in-post: var(--ColorUI-Brand);
+		--ColorUI-Text_is-in-post: var(--ColorUI-Text-is-inverted);
+		--Button-Color: var(--ColorUI-Text-is-inverted);
+		--Button-BG_alpha_idle: 20%;
+		--Button-BG_alpha_hover: 40%;
+		--Button-BG_alpha_active: 60%;
+		grid-column: span 1;
+		min-block-size: 400px;
+	}
+
+	&:nth-child(5n-1) {
+		grid-row: span calc(var(--PostList-Column_count) - 1);
+	}
+}

@@ -1,0 +1,105 @@
+.PostPreview {
+	--BorderRadius: 20px;
+	isolation: isolate;
+	display: block grid;
+	grid-template-areas: "preview";
+	border-radius: var(--BorderRadius);
+	color: var(--ColorUI-Text_is-in-post, color-mix(in srgb, var(--ColorUI-Text_is-secondary) 40%, transparent));
+	background-color: var(--ColorUI-BG_is-in-post, var(--ColorUI-BG_is-secondary));
+
+	&:has(.PostPreview-Image) {
+		background-color: var(--ColorUI-Brand);
+		color: var(--ColorUI-Text_is-inverted);
+	}
+}
+
+.PostPreview-Image {
+	z-index: -1;
+	grid-area: preview;
+	inline-size: 100%;
+	block-size: 100%;
+	object-fit: cover;
+	border-radius: var(--BorderRadius);
+}
+
+.PostPreview-Text {
+	position: relative;
+	isolation: isolate;
+	grid-area: preview;
+	display: block grid;
+	grid-template-rows: auto min-content 1fr;
+	gap: 20px;
+	padding-block: 40px;
+	padding-inline: 30px;
+
+	@container (width >= 580px) {
+		padding-inline: 40px;
+		grid-template-columns: 1fr auto;
+	}
+}
+
+.PostPreview-Title {
+	margin-block: 0;
+	padding-block-start: 10px;
+	grid-column: 1 / -1;
+	font-family: var(--FontAccent-Family);
+	font-weight: 500;
+	font-size: 24px;
+
+	a {
+		text-decoration: none;
+		color: var(--ColorUI-Text_is-in-post, var(--ColorUI-Text_is-secondary));
+
+		&:focus-visible {
+			--Outline: 2px solid var(--ColorUI-Accent);
+			outline: none;
+		}
+
+		&:hover {
+			--Shadow: var(--ShadowUI);
+		}
+
+		&:active {
+			--Shadow: var(--ShadowUI), var(--ShadowUI);
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			border-radius: var(--BorderRadius);
+			outline: var(--Outline);
+			outline-offset: 2px;
+			box-shadow: var(--Shadow);
+		}
+	}
+}
+
+.PostPreview-Category {
+	order: -2;
+	z-index: 1;
+	place-self: start;
+	--Button-BG_alpha: var(--Button-BG_alpha_idle);
+	--Button-Text: var(--ColorUI-BG_is-secondary);
+
+	&:hover {
+		--Button-BG_alpha: var(--Button-BG_alpha_hover);
+	}
+
+	&:active {
+		--Button-BG_alpha: var(--Button-BG_alpha_active);
+	}
+}
+
+.PostPreview-Description {
+	grid-column: 1 / -1;
+}
+
+.PostPreview-Date {
+	margin: 0;
+	font-size: 16px;
+
+	@container (width >= 580px) {
+		order: -1;
+	}
+}

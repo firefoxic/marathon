@@ -1,0 +1,19 @@
+{
+	"maxDensity": null,
+	"formats": [
+		"avif",
+		"webp"
+	],
+	"sizes": [
+		{
+			"width": 320,
+			"height": 400
+		}
+	],
+	"paths": [
+		"./image004@2x.avif",
+		"./image004@1x.avif",
+		"./image004@2x.webp",
+		"./image004@1x.webp"
+	]
+}
