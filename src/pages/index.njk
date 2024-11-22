@@ -4,6 +4,7 @@
 {% from "./components/PostList/index.njk" import PostList with context %}
 {% from "./components/Sidebar/index.njk" import Sidebar with context %}
 {% from "./components/PopularPostList/index.njk" import PopularPostList with context %}
+{% from "./components/Subscribe/index.njk" import Subscribe with context %}
 
 {% set page = {
 	title: "Главная страница",
@@ -21,6 +22,7 @@
 
 	{% call Sidebar("Page-Sidebar") %}
 		{{ PopularPostList("Page-PopularPostList") }}
+		{{ Subscribe("Page-Subscribe") }}
 	{% endcall %}
 	</div>
 

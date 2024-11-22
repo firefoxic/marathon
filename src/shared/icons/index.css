@@ -33,3 +33,9 @@
 	inherits: false;
 	initial-value: url("./phone.svg");
 }
+
+@property --Icon_shape_plane {
+	syntax: "<url>";
+	inherits: false;
+	initial-value: url("./plane.svg");
+}

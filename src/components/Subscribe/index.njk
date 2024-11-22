@@ -1,0 +1,17 @@
+{% from "../Button/index.njk" import Button with context %}
+
+{% macro Subscribe(classes) %}
+	<section class="{{ classes }} Subscribe">
+		<h2 class="Subscribe-Title">Подписка на рассылку</h2>
+		<form class="Subscribe-Form" action="https://echo.htmlacademy.ru" method="post">
+			<label class="Subscribe-Label VisuallyHidden" for="email">Ваш email</label>
+			<input class="Subscribe-Input" id="email" type="email" name="email" placeholder="Email@gmail.com" required>
+			{% call Button("Subscribe-Button", {
+				type: "submit",
+				iconShape: "plane"
+			}) %}
+				Подписаться
+			{% endcall %}
+		</form>
+	</section>
+{% endmacro %}

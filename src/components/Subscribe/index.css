@@ -1,0 +1,71 @@
+.Subscribe {
+	grid-column: 1 / -1;
+	display: block grid;
+	grid-template-columns: auto min(1fr, 644px) auto;
+	grid-template-areas:
+		"indent-left  title  indent-right"
+		"indent-left  form   indent-right";
+	row-gap: 30px;
+	padding: 40px 30px 50px;
+	border-radius: 20px;
+	background: var(--ColorUI-BG_is-secondary);
+	color: var(--Color-Text);
+
+	@media (--only-small) {
+		padding-inline: 0;
+		box-shadow:
+			50vi 0 0 0 var(--ColorUI-BG_is-secondary),
+			-50vi 0 0 0 var(--ColorUI-BG_is-secondary);
+	}
+}
+
+.Subscribe-Title {
+	grid-area: title;
+	margin-block: 0;
+	font-family: var(--FontAccent-Family);
+	font-weight: 500;
+	font-size: 24px;
+	color: var(--ColorUI-Text_is-secondary);
+	text-align: center;
+
+	@media (768px <= width < 1280px) {
+		text-align: start;
+	}
+}
+
+.Subscribe-Form {
+	grid-area: form;
+	display: block grid;
+	gap: 20px;
+
+	@media (768px <= width < 1280px) {
+		grid-template-columns: 1fr auto;
+	}
+}
+
+.Subscribe-Input {
+	box-sizing: border-box;
+	display: block flow-root;
+	padding: 0.75em 30px;
+	inline-size: 100%;
+	max-inline-size: 100%;
+	border: none;
+	border-radius: 20px;
+	font: inherit;
+	color: var(--ColorUI-Text_is-secondary);
+	background: var(--ColorUI-FieldBG);
+
+	&:hover {
+		background: var(--ColorUI-FieldBG_is-secondary);
+	}
+
+	&::placeholder {
+		color: currentcolor;
+		opacity: 0.4;
+	}
+}
+
+.Subscribe-Button {
+	margin: 0;
+	max-inline-size: 100%;
+}
