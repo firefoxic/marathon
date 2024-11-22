@@ -10,6 +10,12 @@
 	&:has(.PostPreview-Image) {
 		background-color: var(--ColorUI-Brand);
 		color: var(--ColorUI-Text_is-inverted);
+
+		@media (hover: hover) {
+			:hover {
+				--HoverParanga: linear-gradient(rgb(0 0 0 / 15%) 0 0);
+			}
+		}
 	}
 }
 
@@ -31,6 +37,8 @@
 	gap: 20px;
 	padding-block: 40px;
 	padding-inline: 30px;
+	border-radius: var(--BorderRadius);
+	background-image: var(--HoverParanga);
 
 	@container (width >= 580px) {
 		padding-inline: 40px;

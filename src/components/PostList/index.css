@@ -34,7 +34,6 @@
 		min-block-size: 280px;
 	}
 
-	&:nth-child(5n-2),
 	&:nth-child(5n-1) {
 		--ColorUI-BG_is-in-post: var(--ColorUI-Brand);
 		--ColorUI-Text_is-in-post: var(--ColorUI-Text_is-inverted);
@@ -44,9 +43,21 @@
 		--Button-BG_alpha_active: 60%;
 		grid-column: span 1;
 		min-block-size: 400px;
+		grid-row: span calc(var(--PostList-Column_count) - 1);
 	}
 
-	&:nth-child(5n-1) {
-		grid-row: span calc(var(--PostList-Column_count) - 1);
+	&:nth-child(5n-2) {
+		grid-column: span 1;
+		min-block-size: 400px;
+
+		&:not(:has(:hover)) {
+			--ColorUI-BG_is-in-post: var(--ColorUI-Brand);
+			--ColorUI-Text_is-in-post: var(--ColorUI-Text_is-inverted);
+			--Button-Color: var(--ColorUI-Text_is-inverted);
+			--Button-BG_alpha_idle: 20%;
+			--Button-BG_alpha_hover: 40%;
+			--Button-BG_alpha_active: 60%;
+			--HoverParanga: linear-gradient(rgb(0 0 0 / 15%) 0 0);
+		}
 	}
 }
