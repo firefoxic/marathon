@@ -1,0 +1,55 @@
+{% from "../Link/index.njk" import Link with context %}
+
+{%- macro Pagination(classes, pageCount, currentPage) -%}
+	{% set currentPage = pageCount if currentPage > pageCount else currentPage %}
+	<nav aria-label="Pagination" class="{{ classes }} Pagination">
+		<h2 class="VisuallyHidden">Пагинация</h2>
+		<ul class="Pagination-List">
+			{% for pageNumber in range(1, pageCount + 1) %}
+
+				{% if currentPage !== 1 and pageNumber === 1 %}
+					<li class="Pagination-Item">
+						{% call Link("Pagination-Link", {
+							rootUrl: "javascript:void(0)",
+							iconShape: "arrow-left",
+							isButton: true
+						}) %}
+							Предыдущая<span class="VisuallyHidden"> страница</span>
+						{% endcall %}
+					</li>
+				{% endif %}
+
+				{% if (pageNumber === currentPage + 4) or (pageNumber === currentPage - 4) %}
+					<li class="Pagination-Item">
+						{% call Link("Pagination-Link", { rootUrl: false }) %}
+							…
+						{% endcall %}
+					</li>
+				{% elif (pageNumber === 1) or (pageNumber === pageCount) or ((pageNumber < currentPage + 4) and (pageNumber > currentPage - 4)) %}
+					<li class="Pagination-Item">
+						{% call Link("Pagination-Link", {
+							rootUrl: "javascript:void(0)",
+							isCurrentPage: pageNumber === currentPage
+						}) %}
+							<span class="VisuallyHidden">Страница</span> {{ pageNumber }}
+						{% endcall %}
+					</li>
+				{% endif %}
+
+				{% if (currentPage !== pageCount) and (pageNumber === pageCount) %}
+					<li class="Pagination-Item">
+						{% call Link("Pagination-Link", {
+							rootUrl: "javascript:void(0)",
+							iconShape: "arrow-right",
+							isTextLeading: true,
+							isButton: true
+						}) %}
+							Следующая<span class="VisuallyHidden"> страница</span>
+						{% endcall %}
+					</li>
+				{% endif %}
+
+			{% endfor %}
+		</ul>
+	</nav>
+{% endmacro %}

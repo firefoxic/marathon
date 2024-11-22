@@ -1,4 +1,5 @@
 {%- from "../PostPreview/index.njk" import PostPreview with context -%}
+{%- from "../Pagination/index.njk" import Pagination with context -%}
 
 {% macro PostList(classes) %}
 	<section class="{{ classes }} PostList">
@@ -10,5 +11,6 @@
 			</li>
 			{% endfor %}
 		</ul>
+		{{ Pagination("PostList-Pagination", 10, 1) }}
 	</section>
 {% endmacro %}

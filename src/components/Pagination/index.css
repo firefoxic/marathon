@@ -1,0 +1,19 @@
+.Pagination {
+	grid-column: 1 / -1;
+}
+
+.Pagination-List {
+	display: block flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5em 2px;
+	margin: 0;
+	padding: 40px 0;
+	list-style: none;
+}
+
+.Pagination-Link {
+	z-index: 1;
+	display: block flex;
+}

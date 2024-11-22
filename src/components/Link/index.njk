@@ -11,7 +11,7 @@
 		{% if not link.rootUrl === false %}
 			{%- set linkUrl = project.root ~ link.rootUrl if link.rootUrl[0] === "/" else link.rootUrl -%}
 			href="{{ linkUrl }}"
-			{{ "aria-current=page" if linkUrl === page.link -}}
+			{{ "aria-current=page" if link.isCurrentPage or linkUrl === page.link -}}
 		{% endif %}
 		style="{{ style }}"
 	>{{ caller() }}</a>
