@@ -107,4 +107,5 @@
 	display: block grid;
 	grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
 	gap: var(--Layout-Gap);
+	padding-block: 40px;
 }

@@ -2,6 +2,7 @@
 
 {% from "./components/Hero/index.njk" import Hero with context %}
 {% from "./components/PostList/index.njk" import PostList with context %}
+{% from "./components/Sidebar/index.njk" import Sidebar with context %}
 
 {% set page = {
 	title: "Главная страница",
@@ -16,7 +17,9 @@
 
 	<div class="Page-Centerer Page-Layout">
 	{% call PostList("Page-PostList") %}{% endcall %}
-	</div>
 
+	{% call Sidebar("Page-Sidebar") %}
+	{% endcall %}
+	</div>
 
 {% endblock Content %}
