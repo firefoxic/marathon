@@ -76,3 +76,35 @@
 	align-self: start;
 	align-content: start;
 }
+
+@property --Layout-Gap {
+	syntax: "<length>";
+	inherits: false;
+	initial-value: 20px;
+}
+
+@property --Layout-Column_size_min {
+	syntax: "<length>";
+	inherits: false;
+	initial-value: 280px;
+}
+
+@property --Layout-Column_count {
+	syntax: "<integer>";
+	inherits: true;
+	initial-value: 1;
+}
+
+.Page-Layout {
+	--Layout-Column_count:
+		round(
+			up,
+			tan(atan2((var(--Content-Area_inline-size) - var(--Layout-Column_size_min) + 1px), 1px))
+			/
+			tan(atan2((var(--Layout-Gap) + var(--Layout-Column_size_min)), 1px)),
+			1
+		);
+	display: block grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+	gap: var(--Layout-Gap);
+}
