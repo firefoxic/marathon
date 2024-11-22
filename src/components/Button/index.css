@@ -12,7 +12,9 @@
 	background: var(--ColorUI-Brand);
 
 	&:hover {
-		background: var(--ColorUI-Accent);
+		@media (hover: hover) {
+			background: var(--ColorUI-Accent);
+		}
 	}
 
 	&::after {

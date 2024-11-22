@@ -56,7 +56,9 @@
 	background: var(--ColorUI-FieldBG);
 
 	&:hover {
-		background: var(--ColorUI-FieldBG_is-secondary);
+		@media (hover: hover) {
+			background: var(--ColorUI-FieldBG_is-secondary);
+		}
 	}
 
 	&::placeholder {

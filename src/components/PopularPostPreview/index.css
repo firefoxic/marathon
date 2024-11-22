@@ -25,7 +25,9 @@
 		}
 
 		&:hover {
-			--Shadow: var(--ShadowUI);
+			@media (hover: hover) {
+				--Shadow: var(--ShadowUI);
+			}
 		}
 
 		&:active {

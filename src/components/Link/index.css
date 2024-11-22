@@ -38,8 +38,10 @@
 	}
 
 	&:hover {
-		--BG_alpha: 15%;
-		--Text-Color: var(--Button-Color, var(--ColorUI-Accent));
+		@media (hover: hover) {
+			--BG_alpha: 15%;
+			--Text-Color: var(--Button-Color, var(--ColorUI-Accent));
+		}
 	}
 
 	&:active {

@@ -56,7 +56,9 @@
 		}
 
 		&:hover {
-			--Shadow: var(--ShadowUI);
+			@media (hover: hover) {
+				--Shadow: var(--ShadowUI);
+			}
 		}
 
 		&:active {
@@ -83,7 +85,9 @@
 	--Button-Text: var(--ColorUI-BG_is-secondary);
 
 	&:hover {
-		--Button-BG_alpha: var(--Button-BG_alpha_hover);
+		@media (hover: hover) {
+			--Button-BG_alpha: var(--Button-BG_alpha_hover);
+		}
 	}
 
 	&:active {

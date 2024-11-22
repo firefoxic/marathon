@@ -4,7 +4,9 @@
 
 .Copyright-Link {
 	&:hover {
-		color: var(--ColorUI-Accent);
+		@media (hover: hover) {
+			color: var(--ColorUI-Accent);
+		}
 	}
 }
 
