@@ -1,4 +1,4 @@
-{%- macro Link(classes, link, icon) -%}
+{%- macro Link(classes, link) -%}
 	{% set style = "--Icon: var(--Icon_shape_" ~ link.iconShape ~ ");" if link.iconShape %}
 	<a
 		class="
