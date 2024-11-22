@@ -4,7 +4,6 @@
 	grid-template-columns: subgrid;
 	grid-column: 1 / span var(--PostList-Column_count);
 	gap: var(--Layout-Gap);
-	padding-block: 0 60px;
 }
 
 .PostList-Container {
