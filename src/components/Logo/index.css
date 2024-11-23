@@ -7,6 +7,26 @@
 	font-family: var(--FontAccent-Family);
 	border-radius: var(--Logo-BorderRadius);
 	outline-offset: 0px;
+	filter:
+		drop-shadow(
+			4px 4px 1em
+			color-mix(
+				in srgb,
+				var(--ColorUI-Shadow) var(--Alpha-Shadow, 0%),
+				transparent
+			)
+		);
+	transition: filter var(--motion-duration, 0.2s);
+
+	&:hover {
+		@media (hover: hover) {
+			--Alpha-Shadow: 40%;
+		}
+	}
+
+	&:active {
+		--Alpha-Shadow: 20%;
+	}
 }
 
 .Logo-Image {

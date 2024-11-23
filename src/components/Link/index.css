@@ -9,6 +9,9 @@
 	font-size: 1rem;
 	color: var(--Text-Color, var(--ColorUI-Text));
 	text-decoration: none;
+	transition:
+		background var(--motion-duration, 0.2s),
+		color var(--motion-duration, 0.2s);
 
 	&[aria-current="page"] {
 		text-decoration: underline;

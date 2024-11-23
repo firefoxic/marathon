@@ -6,6 +6,9 @@
 	border-radius: var(--BorderRadius);
 	color: var(--ColorUI-Text_is-in-post, color-mix(in srgb, var(--ColorUI-Text_is-secondary) 40%, transparent));
 	background-color: var(--ColorUI-BG_is-in-post, var(--ColorUI-BG_is-secondary));
+	transition:
+		color var(--motion-duration, 0.3s),
+		background-color var(--motion-duration, 0.3s);
 
 	&:has(.PostPreview-Image) {
 		background-color: var(--ColorUI-Brand);
@@ -13,10 +16,16 @@
 
 		@media (hover: hover) {
 			:hover {
-				--HoverParanga: linear-gradient(rgb(0 0 0 / 15%) 0 0);
+				--Alpha-ShadingFilter: 15%;
 			}
 		}
 	}
+}
+
+@property --Alpha-ShadingFilter {
+	syntax: "<percentage>";
+	inherits: false;
+	initial-value: 0%;
 }
 
 .PostPreview-Image {
@@ -38,7 +47,16 @@
 	padding-block: 40px;
 	padding-inline: 30px;
 	border-radius: var(--BorderRadius);
-	background-image: var(--HoverParanga);
+	background-image:
+		linear-gradient(
+			color-mix(
+				in srgb,
+				var(--ColorUI-ShadingFilter) var(--Alpha-ShadingFilter, 0%),
+				transparent
+			) 0 0
+		);
+	/* stylelint-disable-next-line value-keyword-case*/
+	transition: --Alpha-ShadingFilter var(--motion-duration, 0.2s);
 
 	@container (width >= 580px) {
 		padding-inline: 40px;
@@ -65,12 +83,12 @@
 
 		&:hover {
 			@media (hover: hover) {
-				--Shadow: var(--ShadowUI);
+				--Alpha-Shadow: 20%;
 			}
 		}
 
 		&:active {
-			--Shadow: var(--ShadowUI), var(--ShadowUI);
+			--Alpha-Shadow: 10%;
 		}
 
 		&::before {
@@ -80,7 +98,8 @@
 			border-radius: var(--BorderRadius);
 			outline: var(--Outline);
 			outline-offset: 2px;
-			box-shadow: var(--Shadow);
+			box-shadow: 4px 8px 40px 0 color-mix(in srgb, var(--ColorUI-Shadow) var(--Alpha-Shadow, 0%), transparent);
+			transition: box-shadow var(--motion-duration, 0.3s);
 		}
 	}
 }

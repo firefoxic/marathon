@@ -1,15 +1,3 @@
 .Copyright {
 	font-family: var(--FontAccent-Family);
 }
-
-.Copyright-Link {
-	&:hover {
-		@media (hover: hover) {
-			color: var(--ColorUI-Accent);
-		}
-	}
-}
-
-.Copyright-Name {
-	font-style: italic;
-}

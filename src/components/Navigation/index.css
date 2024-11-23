@@ -1,5 +1,6 @@
 .Navigation {
 	position: relative;
+	display: block flex;
 }
 
 .Navigation-Title {
@@ -15,6 +16,7 @@
 	border-radius: 0.5em;
 	color: var(--ColorUI-Text);
 	background: var(--ColorUI-BG_is-secondary);
+	transition: color var(--motion-duration, 0.2s);
 
 	@media (--not-small) {
 		display: none;
@@ -74,12 +76,22 @@
 		padding: 40px 30px;
 		border-radius: 20px;
 		background: var(--ColorUI-BG_is-secondary);
-		box-shadow: var(--ShadowUI);
+		transition:
+			opacity var(--motion-duration, 0.3s),
+			visibility var(--motion-duration, 0.3s);
+		box-shadow:
+			4px 8px 40px 0
+			color-mix(
+				in srgb,
+				var(--ColorUI-Shadow) 20%,
+				transparent
+			);
 	}
 
 	:not([hidden]) ~ & {
 		@media (--only-small) {
 			position: absolute;
+			inset-block-start: 100%;
 			inset-inline-end: -0.5em;
 			z-index: 2;
 		}
@@ -87,7 +99,8 @@
 
 	[aria-expanded="false"] ~ & {
 		@media (--only-small) {
-			display: none;
+			visibility: collapse;
+			opacity: 0;
 		}
 	}
 }

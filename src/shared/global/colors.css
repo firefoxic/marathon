@@ -19,10 +19,10 @@
 	--ColorUI-Text_is-inverted: var(--ColorPalette-White);
 	--ColorUI-BG_is-secondary: var(--ColorPalette-White);
 	--ColorUI-Text_is-secondary: var(--ColorPalette-Red-dark);
+	--ColorUI-Shadow: var(--ColorPalette-Mauve_darker);
+	--ColorUI-ShadingFilter: var(--ColorPalette-Black);
 
 	--ColorUI-Accent: var(--ColorPalette-Mauve_light);
-
-	--ShadowUI: 4px 8px 40px 0 oklch(from var(--ColorPalette-Mauve_darker) l c h / 0.2);
 
 	background: var(--ColorUI-BG);
 	color: var(--ColorUI-Text);

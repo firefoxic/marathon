@@ -26,12 +26,12 @@
 
 		&:hover {
 			@media (hover: hover) {
-				--Shadow: var(--ShadowUI);
+				--Alpha-Shadow: 20%;
 			}
 		}
 
 		&:active {
-			--Shadow: var(--ShadowUI), var(--ShadowUI);
+			--Alpha-Shadow: 10%;
 		}
 
 		&::before {
@@ -41,7 +41,8 @@
 			border-radius: var(--BorderRadius);
 			outline: var(--Outline);
 			outline-offset: 2px;
-			box-shadow: var(--Shadow);
+			box-shadow: 4px 8px 40px 0 color-mix(in srgb, var(--ColorUI-Shadow) var(--Alpha-Shadow, 0%), transparent);
+			transition: box-shadow var(--motion-duration, 0.3s);
 		}
 	}
 }
