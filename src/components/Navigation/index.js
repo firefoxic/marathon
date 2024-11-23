@@ -13,6 +13,8 @@
 export function activateNavigation (navigation) {
 	let toggler = navigation.querySelector(`[aria-controls]`)
 
+	if (toggler === null) return
+
 	toggler.setAttribute(`aria-expanded`, false)
 	toggler.removeAttribute(`hidden`)
 
