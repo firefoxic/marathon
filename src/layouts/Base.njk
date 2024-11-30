@@ -28,9 +28,11 @@
 	<body class="Page">
 
 		{% call Header("Page-Header") %}
-		<div class="Page-Centerer Header-Container">
-			{{ Logo("Header-Logo") }}
-			{{ Navigation("Header-Navigation", topNavLinks) }}
+		<div class="Page-Centerer">
+			<div class="Header-Container">
+				{{ Logo("Header-Logo") }}
+				{{ Navigation("Header-Navigation", topNavLinks) }}
+			</div>
 		</div>
 		{% endcall %}
 

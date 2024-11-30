@@ -1,5 +1,5 @@
 .PostPreview {
-	--BorderRadius: 20px;
+	--BorderRadius: calc(1px * tan(atan2(var(--rlh), 1px)));
 	isolation: isolate;
 	display: block grid;
 	grid-template-areas: "preview";
@@ -43,9 +43,8 @@
 	grid-area: preview;
 	display: block grid;
 	grid-template-rows: auto min-content 1fr;
-	gap: 20px;
-	padding-block: 40px;
-	padding-inline: 30px;
+	gap: 1lh;
+	padding: 2.25em 1.75em;
 	border-radius: var(--BorderRadius);
 	background-image:
 		linear-gradient(
@@ -58,19 +57,19 @@
 	/* stylelint-disable-next-line value-keyword-case*/
 	transition: --Alpha-ShadingFilter var(--motion-duration, 0.2s);
 
-	@container (width >= 580px) {
-		padding-inline: 40px;
+	@container (width >= 32em) {
+		padding-inline: 2.25em;
 		grid-template-columns: 1fr auto;
 	}
 }
 
 .PostPreview-Title {
 	margin-block: 0;
-	padding-block-start: 10px;
+	padding-block-start: 0.5em;
 	grid-column: 1 / -1;
 	font-family: var(--FontAccent-Family);
 	font-weight: 500;
-	font-size: 24px;
+	font-size: 1.5em;
 	text-wrap: balance;
 	word-break: break-word;
 
@@ -79,7 +78,7 @@
 		color: var(--ColorUI-Text_is-in-post, var(--ColorUI-Text_is-secondary));
 
 		&:focus-visible {
-			--Outline: 2px solid var(--ColorUI-Accent);
+			--Outline: 0.125rem solid var(--ColorUI-Accent);
 			outline: none;
 		}
 
@@ -99,8 +98,8 @@
 			inset: 0;
 			border-radius: var(--BorderRadius);
 			outline: var(--Outline);
-			outline-offset: 2px;
-			box-shadow: 4px 8px 40px 0 color-mix(in srgb, var(--ColorUI-Shadow) var(--Alpha-Shadow, 0%), transparent);
+			outline-offset: 0.125rem;
+			box-shadow: 0.25em 0.5em 2.25em 0 color-mix(in srgb, var(--ColorUI-Shadow) var(--Alpha-Shadow, 0%), transparent);
 			transition: box-shadow var(--motion-duration, 0.3s);
 		}
 	}
@@ -130,9 +129,9 @@
 
 .PostPreview-Date {
 	margin: 0;
-	font-size: 16px;
+	font-size: 0.875em;
 
-	@container (width >= 580px) {
+	@container (width >= 32em) {
 		order: -1;
 	}
 }

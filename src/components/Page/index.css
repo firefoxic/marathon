@@ -40,6 +40,12 @@
 	initial-value: 100vi;
 }
 
+:root {
+	container-name: root;
+	container-type: size;
+	min-block-size: 100svb;
+}
+
 .Page {
 	margin: initial;
 	min-block-size: 100svb;
@@ -48,6 +54,12 @@
 }
 
 .Page-Centerer {
+	--Breakpoint_range_min: 20rem;
+	--Breakpoint_range_max: 64rem;
+	--Content-Area_max: 87.5rem;
+	--Content-Area_range_min: 17.5rem;
+	--Content-Area_range_max: 58.75rem;
+
 	--Content-Area_inline-size:
 		min(
 			var(--Content-Area_max),
@@ -79,7 +91,7 @@
 
 @property --Layout-Gap {
 	syntax: "<length>";
-	inherits: false;
+	inherits: true;
 	initial-value: 20px;
 }
 
@@ -96,20 +108,22 @@
 }
 
 .Page-Layout {
+	--Layout-Gap: 1rlh;
+	--Layout-Column_size_min: 17.5rem;
 	--Layout-Column_count:
 		round(
 			up,
-			tan(atan2((var(--Content-Area_inline-size) - var(--Layout-Column_size_min) + 1px), 1px))
+			tan(atan2(max(1px, (var(--Content-Area_inline-size) - var(--Layout-Column_size_min))), 1px))
 			/
 			tan(atan2((var(--Layout-Gap) + var(--Layout-Column_size_min)), 1px)),
 			1
 		);
 	display: block grid;
-	grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--Layout-Column_size_min)), 1fr));
 	gap: var(--Layout-Gap);
-	padding-block: 40px 80px;
+	padding-block: 2.25em 4.5em;
 
-	@media (width >= 1280px) {
-		padding-block-end: 60px;
+	@container root (width >= 80em) {
+		padding-block-end: 3.75em;
 	}
 }

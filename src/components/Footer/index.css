@@ -1,7 +1,7 @@
 .Footer {
 	background: oklch(from var(--ColorUI-Brand) l c h / 0.05);
 
-	@media (--not-small) {
+	@container root (inline-size >= 48em) {
 		box-sizing: border-box;
 	}
 }
@@ -9,14 +9,14 @@
 .Footer-Container {
 	display: block grid;
 	justify-items: center;
-	gap: 32px;
-	padding-block: 32px;
+	gap: 2em;
+	padding-block: 2em;
 }
 
 .Footer-Navigation {
-	--NavigationList-ColumnGap: 80px;
+	--NavigationList-ColumnGap: 5em;
 }
 
 .Footer-Copyright {
-	margin-block: 32px 8px;
+	margin-block: 2em 0.5em;
 }

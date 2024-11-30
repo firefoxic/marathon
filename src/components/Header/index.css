@@ -1,30 +1,12 @@
 .Header {
-	padding-block: 3px;
+	padding-block: 0.25em;
 	background: var(--ColorUI-BG_is-secondary);
-
-	@media (--not-small) {
-		box-sizing: border-box;
-	}
 }
 
 .Header-Container {
+	margin-inline: -0.5em;
 	display: block flex;
 	justify-content: space-between;
 	align-items: center;
-}
-
-.Header-Logo {
-	@media (--only-small) {
-		--Logo-Size: 44px;
-	}
-
-	@media (--not-small) {
-		margin-inline-start: -8px;
-	}
-}
-
-.Header-Navigation {
-	@media (--not-small) {
-		margin-inline-end: -8px;
-	}
+	gap: 2.25em;
 }

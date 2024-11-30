@@ -6,10 +6,10 @@
 	display: block flow-root;
 	font-family: var(--FontAccent-Family);
 	border-radius: var(--Logo-BorderRadius);
-	outline-offset: 0px;
+	outline-offset: 0em;
 	filter:
 		drop-shadow(
-			4px 4px 1em
+			0.25em 0.25em 1em
 			color-mix(
 				in srgb,
 				var(--ColorUI-Shadow) var(--Alpha-Shadow, 0%),
@@ -31,7 +31,7 @@
 
 .Logo-Image {
 	display: block flow-root;
-	block-size: var(--Logo-Size, 64px);
+	block-size: 3em;
 	inline-size: auto;
 	border-radius: var(--Logo-BorderRadius);
 }

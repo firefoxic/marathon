@@ -1,22 +1,40 @@
+@property --ErrorIcon-Size_range_min {
+	syntax: "<length>";
+	inherits: false;
+	initial-value: 180px;
+}
+
+@property --ErrorIcon-Size_range_max {
+	syntax: "<length>";
+	inherits: false;
+	initial-value: 270px;
+}
+
+@property --ErrorIcon-Size_max {
+	syntax: "<length>";
+	inherits: false;
+	initial-value: 324px;
+}
+
 .ErrorInfo {
-	--Icon-Size_range_min: 182px;
-	--Icon-Size_range_max: 280px;
-	--Icon-Size_max: 326px;
+	--ErrorIcon-Size_range_min: 10em;
+	--ErrorIcon-Size_range_max: 15em;
+	--ErrorIcon-Size_max: 18em;
 	--Icon-Size:
 		min(
-			var(--Icon-Size_max),
-			var(--Icon-Size_range_min)
+			var(--ErrorIcon-Size_max),
+			var(--ErrorIcon-Size_range_min)
 			+
 			(100vi - var(--Breakpoint_range_min))
 			*
-			tan(atan2((var(--Icon-Size_range_max) - var(--Icon-Size_range_min)), 1px))
+			tan(atan2((var(--ErrorIcon-Size_range_max) - var(--ErrorIcon-Size_range_min)), 1px))
 			/
 			tan(atan2((var(--Breakpoint_range_max) - var(--Breakpoint_range_min)), 1px))
 		);
 	display: block grid;
-	gap: 40px;
+	gap: 2.25em;
 	place-items: center;
-	padding-block: 40px;
+	padding-block: 2.25em;
 	text-align: center;
 
 	&::before {

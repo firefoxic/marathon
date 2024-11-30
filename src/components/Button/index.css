@@ -3,11 +3,10 @@
 	gap: 0.5em;
 	align-items: center;
 	justify-content: center;
-	padding: 0.75em 1.5em;
+	padding: 0.5lh 1.875em;
 	border: none;
-	border-radius: 20px;
-	font-family: var(--FontMain-Family);
-	font-size: 1rem;
+	border-radius: 1lh;
+	font: inherit;
 	color: var(--ColorUI-Text_is-inverted);
 	background: var(--ColorUI-Brand);
 	transition: background var(--motion-duration, 0.2s);

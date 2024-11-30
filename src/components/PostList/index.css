@@ -31,7 +31,6 @@
 
 	&:first-child {
 		grid-column: span var(--PostList-Column_count);
-		min-block-size: 280px;
 	}
 
 	&:nth-child(5n-1) {
@@ -42,13 +41,11 @@
 		--Button-BG_alpha_hover: 40%;
 		--Button-BG_alpha_active: 60%;
 		grid-column: span 1;
-		min-block-size: 400px;
 		grid-row: span calc(var(--PostList-Column_count) - 1);
 	}
 
 	&:nth-child(5n-2) {
 		grid-column: span 1;
-		min-block-size: 400px;
 
 		&:not(:has(:hover)) {
 			--ColorUI-BG_is-in-post: var(--ColorUI-Brand);

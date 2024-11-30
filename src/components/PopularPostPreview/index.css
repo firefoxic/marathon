@@ -1,7 +1,7 @@
 .PopularPostPreview {
 	display: block grid;
 	grid-template-rows: 1fr;
-	gap: 20px;
+	gap: 1.25em;
 	padding: 0;
 }
 
@@ -9,7 +9,7 @@
 	margin-block: 0;
 	font-family: var(--FontAccent-Family);
 	font-weight: 400;
-	font-size: 18px;
+	font-size: 1em;
 	text-wrap: balance;
 
 	a {
@@ -32,6 +32,6 @@
 
 .PopularPostPreview-Date {
 	margin: 0;
-	font-size: 16px;
+	font-size: 0.875em;
 	color: color-mix(in srgb, var(--ColorUI-Text_is-secondary) 40%, transparent);
 }

@@ -18,7 +18,7 @@
 	background: var(--ColorUI-BG_is-secondary);
 	transition: color var(--motion-duration, 0.2s);
 
-	@media (--not-small) {
+	@container root (inline-size >= 42.75em) {
 		display: none;
 	}
 
@@ -46,7 +46,7 @@
 
 	&::before {
 		content: "";
-		inline-size: 2em;
+		inline-size: 3em;
 		aspect-ratio: 1;
 		background: currentcolor;
 		mask: var(--icon) no-repeat center / cover;
@@ -64,41 +64,37 @@
 	display: block flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	column-gap: calc(var(--NavigationList-ColumnGap, 40px) - 1em);
+	column-gap: calc(var(--NavigationList-ColumnGap, 2.25em) - 1em);
 	row-gap: 1em;
 }
 
 .Navigation-List_is-collapsible {
-	@media (--only-small) {
+	@container root (inline-size < 42.75em) {
 		margin: 0.5em;
 		flex-direction: column;
 		inline-size: max-content;
-		padding: 40px 30px;
-		border-radius: 20px;
+		padding: 1lh 1em;
+		border-radius: 1em;
 		background: var(--ColorUI-BG_is-secondary);
 		transition:
 			opacity var(--motion-duration, 0.3s),
 			visibility var(--motion-duration, 0.3s);
 		box-shadow:
-			4px 8px 40px 0
+			0.25em 0.5em 2.25em 0
 			color-mix(
 				in srgb,
 				var(--ColorUI-Shadow) 20%,
 				transparent
 			);
-	}
 
-	:not([hidden]) ~ & {
-		@media (--only-small) {
+		:not([hidden]) ~ & {
 			position: absolute;
 			inset-block-start: 100%;
 			inset-inline-end: -0.5em;
 			z-index: 2;
 		}
-	}
 
-	[aria-expanded="false"] ~ & {
-		@media (--only-small) {
+		[aria-expanded="false"] ~ & {
 			visibility: collapse;
 			opacity: 0;
 		}

@@ -1,18 +1,18 @@
 .Subscribe {
 	grid-column: 1 / -1;
 	display: block grid;
-	grid-template-columns: auto min(1fr, 644px) auto;
 	grid-template-areas:
 		"indent-left  title  indent-right"
 		"indent-left  form   indent-right";
-	row-gap: 30px;
-	padding: 40px 30px 50px;
-	border-radius: 20px;
+	row-gap: 1.75em;
+	padding: 2.25em 1.75em;
+	border-radius: 1em;
 	background: var(--ColorUI-BG_is-secondary);
 	color: var(--Color-Text);
+	container: subscribe / inline-size;
+	padding-inline: calc(1.75em * clamp(0, var(--Layout-Column_count) - 1, 1));
 
-	@media (--only-small) {
-		padding-inline: 0;
+	@container root (inline-size < 48em) {
 		box-shadow:
 			50vi 0 0 0 var(--ColorUI-BG_is-secondary),
 			-50vi 0 0 0 var(--ColorUI-BG_is-secondary);
@@ -24,11 +24,11 @@
 	margin-block: 0;
 	font-family: var(--FontAccent-Family);
 	font-weight: 500;
-	font-size: 24px;
+	font-size: 1.5em;
 	color: var(--ColorUI-Text_is-secondary);
 	text-align: center;
 
-	@media (768px <= width < 1280px) {
+	@container subscribe (inline-size >= 40.25em) {
 		text-align: start;
 	}
 }
@@ -36,9 +36,9 @@
 .Subscribe-Form {
 	grid-area: form;
 	display: block grid;
-	gap: 20px;
+	gap: 1lh;
 
-	@media (768px <= width < 1280px) {
+	@container subscribe (inline-size >= 40.25em) {
 		grid-template-columns: 1fr auto;
 	}
 }
@@ -46,11 +46,11 @@
 .Subscribe-Input {
 	box-sizing: border-box;
 	display: block flow-root;
-	padding: 0.75em 30px;
+	padding: 0.5lh 1.875em;
 	inline-size: 100%;
 	max-inline-size: 100%;
 	border: none;
-	border-radius: 20px;
+	border-radius: 1lh;
 	font: inherit;
 	color: var(--ColorUI-Text_is-secondary);
 	background: var(--ColorUI-FieldBG);
